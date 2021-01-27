@@ -1,0 +1,7 @@
+termcolor
+colorama
+tweepy
+nltk==3.5
+vaderSentiment
+matplotlib
+pygame == 2.0.0.dev12
