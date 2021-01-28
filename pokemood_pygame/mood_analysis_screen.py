@@ -1,6 +1,6 @@
 import random
 
-from common import TextBox, Button, background, Screen
+from common import TextBox, Button, battle_bg, Screen
 from constants import *
 from battle_screens import BattleScreen
 from twitter.twitter_search import geocodes
@@ -84,7 +84,7 @@ your Poketer will be punished and lose {self.attack_score} p in attack strength.
 
     def render(self, screen):
         screen.fill(WHITE)
-        screen.blit(background, (0, 0))
+        screen.blit(battle_bg, (0, 0))
         self.title.render(screen)
 
         for button in self.city_buttons:
@@ -149,7 +149,7 @@ class MoodAnalysisScreen(Screen):
 
     def render(self, screen):
         screen.fill(WHITE)
-        screen.blit(background, (0, 0))
+        screen.blit(battle_bg, (0, 0))
         self.row1.render(screen)
         self.row2.render(screen)
         self.line.render(screen)

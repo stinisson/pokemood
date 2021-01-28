@@ -1,7 +1,7 @@
 import random
 import pygame
 
-from common import TextBox, Button, background, Screen
+from common import TextBox, Button, battle_bg, Screen
 from constants import *
 from battle_screens import BattleScreen
 from poketer import Poketer
@@ -40,7 +40,7 @@ class PoketerIntroScreen(Screen):
 
     def render(self, screen):
         screen.fill(WHITE)
-        screen.blit(background, (0, 0))
+        screen.blit(battle_bg, (0, 0))
         screen.blit(self.gunnar.image, (500, 0))
         screen.blit(self.ada.image, (20, 270))
         self.p1_pres.render(screen)
@@ -85,7 +85,7 @@ your Poketer's health. Good luck!"""
 
     def render(self, screen):
         screen.fill(WHITE)
-        screen.blit(background, (0, 0))
+        screen.blit(battle_bg, (0, 0))
         self.title.render(screen)
 
         for button in self.city_buttons:
@@ -143,7 +143,7 @@ class MoodScoreScreen(Screen):
 
     def render(self, screen):
         screen.fill(WHITE)
-        screen.blit(background, (0, 0))
+        screen.blit(battle_bg, (0, 0))
         self.row1.render(screen)
         self.row2.render(screen)
         self.line.render(screen)

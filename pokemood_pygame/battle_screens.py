@@ -3,7 +3,7 @@ from random import randint
 import pygame
 
 from constants import *
-from common import music, background, TextBox, Button, periodic_movement, Screen
+from common import music, battle_bg, TextBox, Button, periodic_movement, Screen
 from sentiment_analysis_screen import SentimentAnalysisScreen
 from quiz.quiz import QuizStartScreen
 from quiz.quiz_api import quiz_categories
@@ -24,7 +24,7 @@ class BattleScreen(Screen):
                                   "QUIT")
 
         vs_sign = pygame.image.load("media/images/VS.PNG")
-        self.vs_sign = pygame.transform.smoothscale(vs_sign, (200, 150))
+        self.vs_sign = pygame.transform.smoothscale(vs_sign, (270, 343))
 
         self.poketer_name = TextBox((0.22, 0.05), 20, False, LIGHT_GREEN, f"{self.poketer.name}")
         self.poketer_stats = TextBox((0.22, 0.1), 20, False, WHITE, '')
@@ -49,7 +49,7 @@ class BattleScreen(Screen):
 
     def render(self, screen):
         screen.fill(WHITE)
-        screen.blit(background, (0, 0))
+        screen.blit(battle_bg, (0, 0))
 
         x_off, y_off = periodic_movement(1, 5)
         screen.blit(self.poketer.image, (24, 123 + y_off))
@@ -69,7 +69,7 @@ class BattleScreen(Screen):
 
         self.quiz_button.render(screen)
 
-        screen.blit(self.vs_sign, (300, 200))
+        screen.blit(self.vs_sign, (265, 135))
         textbox_gunnar = TextBox((0.5, 0.2), 30, False, WHITE, "It's your turn!")
         textbox_gunnar.render(screen)
 
@@ -137,7 +137,7 @@ class AttackScreen(Screen):
 
     def render(self, screen):
         screen.fill(WHITE)
-        screen.blit(background, (0, 0))
+        screen.blit(battle_bg, (0, 0))
 
         self.textbox_poketer.render(screen)
         self.textbox_cpu_poketer.render(screen)
@@ -224,7 +224,7 @@ class SpecialAttackScreen(Screen):
 
     def render(self, screen):
         screen.fill(WHITE)
-        screen.blit(background, (0, 0))
+        screen.blit(battle_bg, (0, 0))
 
         self.textbox_poketer.render(screen)
         self.textbox_cpu_poketer.render(screen)

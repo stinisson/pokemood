@@ -5,14 +5,14 @@ from pygame import mixer
 
 from constants import *
 
-bg = pygame.image.load("media/images/Background_forest.jpg")
-background = pygame.transform.smoothscale(bg, SCREEN_SIZE)
+logo = pygame.image.load("media/images/logo.png")
+logo = pygame.transform.smoothscale(logo, (654, 214))
 
-logo = pygame.image.load("media/images/LOGO.PNG")
-logo = pygame.transform.smoothscale(logo, (360, 222))
+start_bg = pygame.image.load("media/images/backgrounds/start_bg.jpg")
+start_bg = pygame.transform.scale(start_bg, SCREEN_SIZE)
 
-start_background = pygame.image.load("media/images/background_start.png")
-start_background = pygame.transform.scale(start_background, SCREEN_SIZE)
+battle_bg = pygame.image.load("media/images/backgrounds/bg2.jpg")
+battle_bg = pygame.transform.smoothscale(battle_bg, SCREEN_SIZE)
 
 
 class TextBox:
