@@ -8,10 +8,10 @@ from constants import *
 logo = pygame.image.load("media/images/logo.png")
 logo = pygame.transform.smoothscale(logo, (654, 214))
 
-start_bg = pygame.image.load("media/images/backgrounds/start_bg.jpg")
+start_bg = pygame.image.load("media/images/backgrounds/start_bg.png")
 start_bg = pygame.transform.scale(start_bg, SCREEN_SIZE)
 
-battle_bg = pygame.image.load("media/images/backgrounds/bg2.jpg")
+battle_bg = pygame.image.load("media/images/backgrounds/night.png")
 battle_bg = pygame.transform.smoothscale(battle_bg, SCREEN_SIZE)
 
 

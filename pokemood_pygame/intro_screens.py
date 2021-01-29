@@ -82,6 +82,7 @@ class FirstScreen(Screen):
         self.x_hasse = 0
         self.y_hasse = 200
         self.x_ada = 780
+        self.x_ada_face_right = -210
         music("media/music/intro_song_1.mp3", 0.0)
         self.gunnar = Poketer("Happy Hasse", 'happy', 'yellow', 100, 50, catchword="#YOLO",
                               img_name="media/images/Green_monster_resized.png")
@@ -89,13 +90,14 @@ class FirstScreen(Screen):
 
         self.ada = Poketer("Aggressive Ada", 'angry', 'red', 100, 50, catchword="#FTW",
                            img_name="media/images/Pink_dragon_01.png")
-        self.ada.image = pygame.transform.flip(self.ada.image, True, False)
-
-        self.ada.image = pygame.transform.flip(self.ada.image, True, False)
         self.ada.image = pygame.transform.smoothscale(self.ada.image, (225, 218))
 
-        self.start_button = Button((0.5, 0.8), (0.3, 0.12), PASTEL_3,
-                                   PASTEL_6, 27, WHITE, "Let's begin!", frame=PASTEL_4)
+        #self.ada.image = pygame.transform.flip(self.ada.image, True, False)
+
+        self.ada.image_face_right = pygame.transform.flip(self.ada.image, True, False)
+
+        self.start_button = Button((0.5, 0.8), (0.3, 0.12), (233,84,143, 255),
+                                   (248,171,124,255), 27, WHITE, "Let's begin!", frame=(160,91,160,255))
 
     def handle_mouse_button(self, button):
         if button == 1:
@@ -165,7 +167,7 @@ class FirstScreen(Screen):
         elif self.current_frame == "third":
             """Hasse->"""
             frame_time_max = 5000
-            x_start_h = 0
+            x_start_h = -100
             x_end_h = 290
             t_start_h = 0
             t_end_h = 4000
@@ -197,21 +199,29 @@ class FirstScreen(Screen):
                 self.frame_start_time = pygame.time.get_ticks()
 
         elif self.current_frame == "fifth":
-            """Hasse->"""
+            """Ada -> Hasse->"""
             frame_time_max = 9000
             x_start_h = 290
             x_end_h = 850
-            t_start_h = 0
+            t_start_h = 500
             t_end_h = 5000
+
+            x_start_a = -210
+            x_end_a = 850
+            t_start_a = 0000
+            t_end_a = 6500
 
             if t_start_h < frame_time < t_end_h:
                 print("hasse:", self.x_hasse)
                 self.x_hasse = self.movement(x_start_h, x_end_h, t_start_h, t_end_h, frame_time)
 
+            if t_start_a < frame_time < t_end_a:
+                print("ada:", self.x_ada_face_right)
+                self.x_ada_face_right = self.movement(x_start_a, x_end_a, t_start_a, t_end_a, frame_time)
+
             if frame_time > frame_time_max:
                 self.current_frame = "first"
                 self.frame_start_time = pygame.time.get_ticks()
-
 
     def handle_timer(self):
         time_now = pygame.time.get_ticks()
@@ -224,6 +234,7 @@ class FirstScreen(Screen):
         screen.blit(logo, (73, -45))
         screen.blit(self.gunnar.image, (self.x_hasse, self.y_hasse))
         screen.blit(self.ada.image, (self.x_ada, 200))
+        screen.blit(self.ada.image_face_right, (self.x_ada_face_right, 200))
         self.start_button.render(screen)
 
 
