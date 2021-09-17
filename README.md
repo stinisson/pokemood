@@ -15,7 +15,7 @@ Quiz questions from [ Open Trivia DB](https://opentdb.com/ "Open Trivia DB - a f
 
 Icon By [Andreuvv](https://commons.wikimedia.org/w/index.php?curid=90091768/ "Icon By Andreuvv - Own work") - Own work, CC BY-SA 4.0. 
 
-![game-intro](captures/intro.png)
+[![Pokemood](captures/intro.png)](https://youtu.be/qz_heiNZUlo "Pokemood")
 ![game-battle](captures/battle.png)
 ![game-sentiment-analysis](captures/sentiment_analysis.png)
 ![game-sentiment-result](captures/sentiment_result.png)
